@@ -1,0 +1,10 @@
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: ./.docker/node/Dockerfile
+    volumes:
+      - .:/app:cached
+    tty: true
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
