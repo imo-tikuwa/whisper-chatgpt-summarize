@@ -56,11 +56,12 @@ if (!options.file) {
         return response.data.choices[0].message.content;
       });
 
-    // テーブル出力
-    console.table([
-      { type: "whisper result", result: transcriptionResult },
-      { type: "chatgpt result", result: summarizeResult },
-    ]);
+    // 結果出力
+    console.log("---------- whisper result ----------");
+    console.log(transcriptionResult.trim());
+    console.log("\n");
+    console.log("---------- chatgpt result ----------");
+    console.log(summarizeResult.trim());
   } catch (error) {
     console.log(error.response.data);
     process.exit(1);
